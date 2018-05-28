@@ -1,4 +1,4 @@
-# study
+# For My Study & Snippet  
 
 Some Example codes for my study.
 
