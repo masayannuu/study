@@ -9,3 +9,7 @@ p 0x10 # => 16 hexademical
 
 p 3.14r # => (157/50) r is rational syntax
 p 3.14i # => (0+3.14i) complex
+
+p 100_000_000 # => 100000000 for easy to read
+
+p 3.14.to_c # => (3.14+0i)

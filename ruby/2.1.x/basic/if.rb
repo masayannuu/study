@@ -4,6 +4,7 @@
 # output. ruby is all true(True Class) except for nil and false
 # => 0
 # => 1
+# => 1
 def main
   if 0
     p 0
@@ -20,6 +21,18 @@ def main
   if nil
     p 3
   end
+
+  scope
+end
+
+#== if has not scope for local variables
+# NOTE: it's for literal too
+# print 1
+def scope
+  if true
+    bar = 1
+  end
+  p bar
 end
 
 main
