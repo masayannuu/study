@@ -34,6 +34,7 @@ class C2
   def method1; "c2"; end
 end
 
-p C1.new.method1 # => "c1"
 p C1.method1 # => "m1"
 p C2.new.method1 # => "c2"
+p C1.ancestors # => C1, Object, Kernel, BasicObject]
+p C2.ancestors # => [C2, M1, Object, Kernel, BasicObject]
