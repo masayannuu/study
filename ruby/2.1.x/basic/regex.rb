@@ -50,3 +50,7 @@ p $' # => "hijk"
 
 # have ignore case option
 p Regexp.new("ab").casefold? # => false
+
+reg = /^New|new$/
+p reg === "Newmoge" # => true
+p reg === "fuganew" # => true

@@ -27,3 +27,6 @@ p "a" < "b" # => true
 p "abcdefghijklmnopqrstuvwxyz".gsub(/abc/) {|s|s.upcase} # => "ABCdefghijklmnopqrstuvwxyz"
 p "abcdefghijklmnopqrstuvwxyz".scan(/.{3}/) # => ["abc", "def", "ghi", "jkl", "mno", "pqr", "stu", "vwx"]
 p "abcdefghijklmnopqrstuvwxyz".match(/.{3}/) # => #<MatchData "abc">
+
+member = [10, "Tanaka"]
+print "ID:%d Name:%s\n" % member
