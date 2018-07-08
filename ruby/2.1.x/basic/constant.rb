@@ -20,3 +20,10 @@ Bar.foo # => "main"
 bar = Bar.new
 bar.moge # => "main"
 bar.hoge # => "bar"
+
+CONST = ["1", "2", "3"]
+CONST = ["A", "B", "C"] # => warning: already initialized constant CONST
+p CONST # => ["A", "B", "C"]
+
+CONST[0] = "AX"
+p CONST # => ["AX", "B", "C"]

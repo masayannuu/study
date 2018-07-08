@@ -18,3 +18,7 @@ a.singleton_methods
 # dup < clone, clone duplicate frozen state and singleton_methods.
 b = a.dup
 b = a.clone
+
+hoge = "hoge".freeze
+hoge = "fuga".freeze
+p hoge # => "fuga"
