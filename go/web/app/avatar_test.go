@@ -1,6 +1,10 @@
 package main
 
 import (
+	"io/ioutil"
+	"log"
+	"os"
+	"path/filepath"
 	"testing"
 
 	gomniauthtest "github.com/stretchr/gomniauth/test"
@@ -32,10 +36,10 @@ func TestAuthAvatar(t *testing.T) {
 
 func TestGravatarAvatar(t *testing.T) {
 	var gravatarAvatar gravatarAvatar
-	var testURL string = "//www.gravatar.com/avatar/"
-	var testUserID string = "abc"
+	testURL := "//www.gravatar.com/avatar/"
+	testUserID := "adc"
 
-	user := &hatUser{uniqueID: "abc"}
+	user := &chatUser{uniqueID: "abc"}
 	url, err = gravatarAvatar.GetAvatarURL(user)
 	if err != nil {
 		t.Error("Gravatar.getAvatarURL()はエラーを返すべきではありません")
@@ -46,5 +50,18 @@ func TestGravatarAvatar(t *testing.T) {
 }
 
 func TestFileSystemAvata(t *testing.T) {
+	filename := filepath.Join("avatars", "abc.jpg")
+	ioutil.WriteFile(filename, []byte{}, 0777)
+	defer func() { os.Remove(filename) }()
 
+	var fileSystemAvatar FileSystemAvatar
+	var testFile = "/avatars/abc.jpg"
+	user := &chatUser{uniqueID: "abc"}
+
+	url, err := fileSystemAvatar.GetAvatarURL(user)
+	if err != nil {
+		t.Error("FileSystemAvatar.GetAvatarURL()はエラーを返すべきではない")
+	} else if url != testFile {
+		t.Errorf("FileSystemAvatar.GetAvatarURL()が'%s'という誤った値を返しました", url)
+	}
 }

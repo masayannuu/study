@@ -1,3 +1,3 @@
-FROM go:latest
+FROM golang:latest
 
 WORKDIR /usr/src/app
