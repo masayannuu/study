@@ -11,6 +11,15 @@ var (
 	z      complex128 = cmplx.Sqrt(-5 + 12i)
 )
 
+//	go言語の基本型
+//	string
+//	intint8	int16	int32	int64
+//	uint	uint8	uint32	uint64	uintptr
+//	byte	//	uint8 の別名
+//	rune	//	int32 の別名
+//		//	Unicode のコードポイントを表す
+//	float32	float64
+//	complex64	complext128
 func main() {
 	fmt.Printf("Type: %T Value: %v\n", ToBe, ToBe)
 	fmt.Printf("Type: %T Value: %v\n", MaxInt, MaxInt)
